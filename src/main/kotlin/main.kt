@@ -16,7 +16,7 @@ fun printBoard(board: Array<IntArray>) {
     }
 }
 
-fun Input(): String {
+fun input(): String {
     return readLine()!!
 }
 
@@ -24,31 +24,25 @@ fun removeSpaces(string: String): String {
     return string.replace("\\s".toRegex(), "")
 }
 
-fun toArray(string: String): Array<String>{
-    return string.split(",").toTypedArray()
+fun toListCommaSeparated(string: String): List<String> = string.split(",")
+
+fun userInput(): List<String> {
+    return toListCommaSeparated(removeSpaces(input()))
 }
 
-fun userChessInput(): Array<String> {
-    return toArray(removeSpaces(Input()))
+fun whiteChessInput(): List<String> {
+    println("Enter White: ")
+    return userInput()
 }
 
-fun whiteInput(): Array<String> {
-    println("Enter White : ")
-    return userChessInput()
+fun blackChessInput(): List<String> {
+    println("Enter Black: ")
+    return userInput()
 }
 
-fun blackInput(): Array<String> {
-    println("Enter Black : ")
-    return userChessInput()
-}
-
-fun toList(string: Array<String>): String{
-    return string.joinToString(separator = ":")
-}
-
-fun whiteUserOutput() {
-    if (!(whiteInput().isEmpty())) {
-         + toList(whiteInput()))
+fun checkBothInputs(firstString: List<String>, secondString: List<String>) {
+    if ((firstString == listOf("")) && ((secondString == listOf("")))) {
+        println("You must enter at least one piece!")
     }
 }
 
@@ -56,10 +50,17 @@ fun main() {
 
     val board = createBoard()
     printBoard(board)
-    whiteUserOutput()
-    blackUserOutput()
 
+    val whiteChessInput = whiteChessInput()
+    val blackChessInput = blackChessInput()
+    checkBothInputs(whiteChessInput, blackChessInput)
+    println("You entered: \nWhite: $whiteChessInput\nBlack: $blackChessInput")
 
 }
+
+
+
+
+
 
 
