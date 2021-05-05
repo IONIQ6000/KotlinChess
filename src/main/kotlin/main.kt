@@ -46,6 +46,11 @@ fun checkBothInputs(firstString: List<String>, secondString: List<String>) {
     }
 }
 
+fun confirmInput(whiteChessInput: List<String>, blackChessInput: List<String>) {
+    println("You entered: \nWhite: " + whiteChessInput.joinToString(separator = ":")
+                + "\nBlack: " + blackChessInput.joinToString(separator = ":"))
+}
+
 fun main() {
 
     val board = createBoard()
@@ -54,9 +59,10 @@ fun main() {
     val whiteChessInput = whiteChessInput()
     val blackChessInput = blackChessInput()
     checkBothInputs(whiteChessInput, blackChessInput)
-    println("You entered: \nWhite: $whiteChessInput\nBlack: $blackChessInput")
+    confirmInput(whiteChessInput, blackChessInput)
 
 }
+
 
 
 
