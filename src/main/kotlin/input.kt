@@ -1,10 +1,11 @@
-fun createBoard(): Array<IntArray> {
-    return Array(8) { IntArray(8) }
+fun createBoard(): Array<Array<String>>  {
+    return Array(8) { Array(8){"emps"} }
 }
 
-fun printBoard(board: Array<IntArray>) {
-    for (row in board) {
-        println(row.contentToString())
+fun printBoard(board: Array<Array<String>>) {
+    board.forEach { it ->
+        it.forEach { print("$it ") }
+        println()
     }
 }
 
@@ -23,10 +24,11 @@ fun userInput(): List<String> {
 }
 
 fun capitalizeFirstLetter(string: List<String>): List<String> {
+    val wordList: MutableList<String> = mutableListOf()
     for (word in string) {
-        string[0].capitalize()
+        wordList.add(word.capitalize())
     }
-    return string
+    return wordList
 }
 
 fun whiteChessInput(): List<String> {
