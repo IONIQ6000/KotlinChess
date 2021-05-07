@@ -3,8 +3,8 @@ fun createBoard(): Array<Array<String>>  {
 }
 
 fun printBoard(board: Array<Array<String>>) {
-    board.forEach { it ->
-        it.forEach { print("$it ") }
+    board.forEach { spaces ->
+        spaces.forEach { print("$it ") }
         println()
     }
 }

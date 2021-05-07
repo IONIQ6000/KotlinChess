@@ -1,9 +1,9 @@
-fun charMap(): Map<String, Int> {
-    return mapOf("A" to 0, "B" to 1, "C" to 2, "D" to 3, "E" to 4, "F" to 5, "G" to 6, "H" to 7)
+fun charMap(): Map<Char, Int> {
+    return mapOf('A' to 0, 'B' to 1, 'C' to 2, 'D' to 3, 'E' to 4, 'F' to 5, 'G' to 6, 'H' to 7)
 }
 
 fun convertSecondCharToNum(char: Char): Int {
-    return charMap().getValue(char.toString())
+    return charMap().getValue(char)
 }
 
 fun translateX(piece: String): Int {
@@ -32,8 +32,3 @@ fun convertBoardPieces(ChessInput: List<String>, board: Array<Array<String>>, pi
     }
     return board
 }
-
-
-
-
-
