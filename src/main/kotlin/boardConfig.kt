@@ -24,11 +24,13 @@ fun insertPieceType(piece: String, char: Char): String {
 fun convertBoardPieces(ChessInput: List<String>, board: Array<Array<String>>, pieceType: Char): Array<Array<String>> {
     var boardX: Int
     var boardY: Int
-    for (piece in ChessInput) {
-        boardX = translateX(piece)
-        boardY = translateY(piece)
-        board[boardX][boardY] = insertPieceType(piece, pieceType)
+    if (ChessInput != listOf("")) {
+        for (piece in ChessInput) {
+            boardX = translateX(piece)
+            boardY = translateY(piece)
+            board[boardX][boardY] = insertPieceType(piece, pieceType)
 
+        }
     }
     return board
 }
