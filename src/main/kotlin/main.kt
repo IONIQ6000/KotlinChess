@@ -8,8 +8,10 @@ fun main() {
     checkBothInputs(whiteChessInput, blackChessInput)
     confirmInput(whiteChessInput, blackChessInput)
 
-    convertBoardPieces(whiteChessInput,board,'W')
-    convertBoardPieces(blackChessInput,board,'B')
+    validateInput(whiteChessInput)
+
+    convertBoardPieces(whiteChessInput, board, 'W')
+    convertBoardPieces(blackChessInput, board, 'B')
 
     printBoard(board)
 
