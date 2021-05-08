@@ -1,3 +1,5 @@
+import kotlin.system.exitProcess
+
 fun pieceList(): List<Char> {
     return listOf('P', 'R', 'B', 'Q', 'N', 'K')
 }
@@ -7,7 +9,7 @@ fun xList(): List<Char> {
 }
 
 fun yList(): List<Int> {
-    return listOf(1,2,3,4,5,6,7,8)
+    return listOf(1, 2, 3, 4, 5, 6, 7, 8)
 }
 
 fun checkDir(pieceType: Char, library: List<Char>): Boolean {
@@ -39,11 +41,15 @@ fun checkX(X: Char): Boolean {
 }
 
 fun validateInput(input: List<String>) {
-    for (piece in input) {
-        if (!(checkPieceType(piece[0].toUpperCase()) &&
-            checkX(piece[1].toLowerCase()) && checkY(piece[2].toString().toInt())
-        )) {
-            println("Inputs are not valid!")
+    if (input != listOf("")) {
+        for (piece in input) {
+            if (!(checkPieceType(piece[0].toUpperCase()) &&
+                        checkX(piece[1].toLowerCase()) && checkY(piece[2].toString().toInt())
+                        )
+            ) {
+                println("Inputs are not valid!")
+                exitProcess(1)
             }
+        }
     }
 }

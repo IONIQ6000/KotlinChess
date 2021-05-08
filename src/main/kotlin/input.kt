@@ -1,3 +1,5 @@
+import kotlin.system.exitProcess
+
 fun createBoard(): Array<Array<String>> {
     return Array(8) { Array(8) { "emps" } }
 }
@@ -31,6 +33,14 @@ fun capitalizeFirstLetter(string: List<String>): List<String> {
     return wordList
 }
 
+fun lowerCaseSecondLetter(string: List<String>): List<String> {
+    val wordList: MutableList<String> = mutableListOf()
+    for (word in string) {
+        wordList.add(word[1].toString())
+    }
+    return wordList
+}
+
 fun whiteChessInput(): List<String> {
     println("Enter White: ")
     return userInput()
@@ -44,6 +54,7 @@ fun blackChessInput(): List<String> {
 fun checkBothInputs(firstString: List<String>, secondString: List<String>) {
     if ((firstString == listOf("")) && ((secondString == listOf("")))) {
         println("You must enter at least one piece!")
+        exitProcess(1)
     }
 }
 

@@ -9,6 +9,7 @@ fun main() {
     confirmInput(whiteChessInput, blackChessInput)
 
     validateInput(whiteChessInput)
+    validateInput(blackChessInput)
 
     convertBoardPieces(whiteChessInput, board, 'W')
     convertBoardPieces(blackChessInput, board, 'B')
