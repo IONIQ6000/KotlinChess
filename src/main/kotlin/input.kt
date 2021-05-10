@@ -33,14 +33,6 @@ fun capitalizeFirstLetter(string: List<String>): List<String> {
     return wordList
 }
 
-fun lowerCaseSecondLetter(string: List<String>): List<String> {
-    val wordList: MutableList<String> = mutableListOf()
-    for (word in string) {
-        wordList.add(word[1].toString())
-    }
-    return wordList
-}
-
 fun whiteChessInput(): List<String> {
     println("Enter White: ")
     return userInput()
