@@ -1,16 +1,5 @@
 import kotlin.system.exitProcess
 
-fun createBoard(): Array<Array<String>> {
-    return Array(8) { Array(8) { "emps" } }
-}
-
-fun printBoard(board: Array<Array<String>>) {
-    board.forEach { spaces ->
-        spaces.forEach { print("$it ") }
-        println()
-    }
-}
-
 fun input(): String {
     return readLine()!!
 }
@@ -52,8 +41,8 @@ fun checkBothInputs(firstString: List<String>, secondString: List<String>) {
 
 fun confirmInput(whiteChessInput: List<String>, blackChessInput: List<String>) {
     println(
-        "You entered: \nWhite: " + whiteChessInput.joinToString(separator = ":")
-                + "\nBlack: " + blackChessInput.joinToString(separator = ":")
+        "You entered: \nWhite -> " + whiteChessInput.joinToString(separator = ":")
+                + "\nBlack -> " + blackChessInput.joinToString(separator = ":")
     )
 }
 

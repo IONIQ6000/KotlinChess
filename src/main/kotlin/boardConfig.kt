@@ -1,3 +1,16 @@
+fun createBoard(): Array<Array<String>> {
+    return Array(8) { Array(8) { "emps" } }
+}
+
+fun printBoard(board: Array<Array<String>>) {
+    println()
+    board.forEach { spaces ->
+        spaces.forEach { print("$it ") }
+        println()
+    }
+    println()
+}
+
 fun charMap(): Map<Char, Int> {
     return mapOf('A' to 0, 'B' to 1, 'C' to 2, 'D' to 3, 'E' to 4, 'F' to 5, 'G' to 6, 'H' to 7)
 }
@@ -6,11 +19,11 @@ fun convertSecondCharToNum(char: Char): Int {
     return charMap().getValue(char)
 }
 
-fun translateX(piece: String): Int {
+private fun translateX(piece: String): Int {
     return convertSecondCharToNum(piece[1].toUpperCase())
 }
 
-fun translateY(piece: String): Int {
+private fun translateY(piece: String): Int {
     return piece[2].toString().toInt() - 1
 }
 
