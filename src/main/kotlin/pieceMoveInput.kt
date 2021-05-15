@@ -21,20 +21,33 @@ fun checkBoard(input: String, board: Array<Array<String>>): Boolean {
     return boo
 }
 
-fun checkStrings(input: String, board: Array<Array<String>>) : Boolean{
-    var boo = false
+private fun checkStrings(
+    input: String,
+    board: Array<Array<String>>,
+    boolean: Boolean
+): Boolean {
+    var boo = boolean
     if ((checkX(input[0].toLowerCase()) && checkY(input[1].toString().toInt()) && (checkBoard(
-        input,
-        board
-    ))))
+            input,
+            board
+        )))
+    )
         boo = true
+    return boo
+}
+
+fun checkStringsFlags(input: String, board: Array<Array<String>>) : Boolean{
+    var boo = false
+    if(input[0].isLetter() && input[1].isDigit()) {
+        boo = checkStrings(input, board, boo)
+    }
     return boo
 }
 
 private fun checkFlags(input: String, board: Array<Array<String>>): Boolean {
     var boo = false
     if (checkLength(input)) {
-        if (checkStrings(input, board))
+        if (checkStringsFlags(input, board))
             boo = true
     }
     return boo
