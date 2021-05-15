@@ -45,7 +45,7 @@ fun checkX(X: Char): Boolean {
     return checkDir(X, xList())
 }
 
-fun checkLength(piece: String): Boolean {
+private fun checkLength(piece: String): Boolean {
     var boo = false
     if (piece.length == 3)
         boo = true
@@ -63,7 +63,7 @@ private fun checkPiece(piece: String) {
 fun validateInput(input: List<String>) {
     if (input != listOf("")) {
         for (piece in input) {
-            if ((checkLength(piece))) {
+            if (checkLength(piece)) {
                 checkPiece(piece)
             } else {
                 exitMsg()

@@ -17,5 +17,6 @@ fun main() {
     printBoard(board)
 
     val input = pieceMoveInput(board)
+    println("Piece: $input")
 
 }
