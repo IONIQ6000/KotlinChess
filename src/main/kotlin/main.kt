@@ -5,8 +5,8 @@ fun main() {
 
     val whiteChessInput = whiteChessInput()
     val blackChessInput = blackChessInput()
-    checkBothInputs(whiteChessInput, blackChessInput)
-    confirmInput(whiteChessInput, blackChessInput)
+    checkIfEmptyInputs(whiteChessInput, blackChessInput)
+    printInputs(whiteChessInput, blackChessInput)
 
     validateInput(whiteChessInput)
     validateInput(blackChessInput)

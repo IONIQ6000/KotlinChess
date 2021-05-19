@@ -32,14 +32,14 @@ fun blackChessInput(): List<String> {
     return userInput()
 }
 
-fun checkBothInputs(firstString: List<String>, secondString: List<String>) {
+fun checkIfEmptyInputs(firstString: List<String>, secondString: List<String>) {
     if ((firstString == listOf("")) && ((secondString == listOf("")))) {
         println("You must enter at least one piece!")
         exitProcess(1)
     }
 }
 
-fun confirmInput(whiteChessInput: List<String>, blackChessInput: List<String>) {
+fun printInputs(whiteChessInput: List<String>, blackChessInput: List<String>) {
     println(
         "You entered: \nWhite -> " + whiteChessInput.joinToString(separator = ":")
                 + "\nBlack -> " + blackChessInput.joinToString(separator = ":")
