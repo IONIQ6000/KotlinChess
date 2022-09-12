@@ -14,11 +14,7 @@ fun chessInput(pieceType: String): List<String> {
     return userInput()
 }
 
-fun checkIfEmpty(inputList: List<String>) {
-    if (inputList == listOf("")) {
-            println("You must enter at least one piece!")
-        }
-}
+
 
 fun displayInputs(whiteChessInput: List<String>, blackChessInput: List<String>) {
     println(

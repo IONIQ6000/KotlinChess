@@ -2,12 +2,17 @@ fun main() {
 
     val board = createBoard()
     printBoard(board)
+    var whiteChessInput : List<String>
+    var blackChessInput : List<String>
 
-    val whiteChessInput = chessInput("White")
-    val blackChessInput = chessInput("Black")
-    checkIfEmpty(whiteChessInput)
+    do {
+        whiteChessInput = chessInput("White")
+    } while (!validateInput(whiteChessInput))
 
-    validateInput(whiteChessInput)
+    do {
+        blackChessInput = chessInput("Black")
+    } while (!validateInput(blackChessInput))
+
 
     displayInputs(whiteChessInput, blackChessInput)
 
