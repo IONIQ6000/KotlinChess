@@ -11,7 +11,7 @@ private fun charMap(): Map<Char, Int> {
     return mapOf('A' to 0, 'B' to 1, 'C' to 2, 'D' to 3, 'E' to 4, 'F' to 5, 'G' to 6, 'H' to 7)
 }
 
-private fun convertSecondCharToNum(char: Char): Int {
+internal fun convertSecondCharToNum(char: Char): Int {
     return charMap().getValue(char)
 }
 

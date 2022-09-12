@@ -23,7 +23,7 @@ fun displayInputs(whiteChessInput: List<String>, blackChessInput: List<String>) 
     )
 }
 
-private fun input(): String {
+internal fun input(): String {
     return readLine()!!
 }
 

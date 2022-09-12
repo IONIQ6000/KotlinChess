@@ -37,11 +37,11 @@ private fun checkPieceType(pieceType: Char): Boolean {
     return checkCharDir(pieceType, pieceList())
 }
 
-private fun checkX(X: Char): Boolean {
+internal fun checkX(X: Char): Boolean {
     return checkCharDir(X, xList())
 }
 
-private fun checkY(Y: Char): Boolean {
+internal fun checkY(Y: Char): Boolean {
     return checkCharDir(Y, yList())
 }
 

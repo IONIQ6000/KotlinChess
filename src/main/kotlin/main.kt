@@ -22,4 +22,6 @@ fun main() {
 
     printBoard(board)
 
+    pieceMoveInput(board)
+
 }
