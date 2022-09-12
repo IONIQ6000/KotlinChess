@@ -3,12 +3,14 @@ fun main() {
     val board = createBoard()
     printBoard(board)
 
-    val whiteChessInput = whiteChessInput()
-    val blackChessInput = blackChessInput()
-    checkBothInputs(whiteChessInput, blackChessInput)
-    confirmInput(whiteChessInput, blackChessInput)
+    val whiteChessInput = chessInput("White")
+    val blackChessInput = chessInput("Black")
+    checkIfEmpty(whiteChessInput)
 
     validateInput(whiteChessInput)
+
+    displayInputs(whiteChessInput, blackChessInput)
+
 
     convertBoardPieces(whiteChessInput, board, 'W')
     convertBoardPieces(blackChessInput, board, 'B')
